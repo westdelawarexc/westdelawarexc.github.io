@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <path id="arcTop" d="M 70 200 A 130 130 0 0 1 330 200"/>
+    <path id="arcBot" d="M 58 200 A 142 142 0 0 0 342 200"/>
+  </defs>
+  <circle cx="200" cy="200" r="196" fill="#A6A6A6"/>
+  <circle cx="200" cy="200" r="186" fill="#111"/>
+  <circle cx="200" cy="200" r="178" fill="#E04E0F"/>
+  <circle cx="200" cy="200" r="170" fill="#fff"/>
+  <circle cx="200" cy="200" r="164" fill="#C9C9C9"/>
+  <text font-family="'Fira Sans',Arial,sans-serif" font-weight="900" font-size="38" fill="#111" letter-spacing="2" text-anchor="middle">
+    <textPath href="#arcTop" startOffset="50%">WEST DELAWARE</textPath>
+  </text>
+  <text font-family="'Fira Sans',Arial,sans-serif" font-weight="900" font-size="34" fill="#111" letter-spacing="2" text-anchor="middle">
+    <textPath href="#arcBot" startOffset="50%" dominant-baseline="hanging">GIRLS CROSS COUNTRY</textPath>
+  </text>
+  <!-- trail / hills -->
+  <path d="M96 236 C140 200 170 222 200 206 C232 189 262 212 304 196 L304 252 L96 252 Z" fill="#111"/>
+  <path d="M96 236 C140 200 170 222 200 206 C232 189 262 212 304 196" fill="none" stroke="#E04E0F" stroke-width="6" stroke-linecap="round"/>
+  <text x="200" y="182" font-family="'Fira Sans',Arial,sans-serif" font-style="italic" font-weight="900" font-size="92" fill="#E04E0F" stroke="#111" stroke-width="5" paint-order="stroke" text-anchor="middle">WD</text>
+  <text x="200" y="244" font-family="'Barlow Condensed',Arial,sans-serif" font-weight="700" font-size="30" fill="#fff" letter-spacing="8" text-anchor="middle">HAWKS</text>
+</svg>

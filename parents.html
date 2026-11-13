@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parents &amp; Athletes · West Delaware Girls Cross Country</title>
+<meta name="description" content="Coach contacts, team handbook, parent handbook, sign-ups and documents for West Delaware girls cross country families.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,700;0,800;1,900&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.grp{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.gb{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.gb h3{margin:0;background:var(--k);color:#fff;border-bottom:3px solid var(--o);font:800 19px var(--f-head);text-transform:uppercase;letter-spacing:.5px;padding:9px 14px;display:flex;align-items:center;gap:10px}
+.gb h3 svg{flex:none;color:var(--o)}
+.gb ul{list-style:none;margin:0;padding:6px 0}
+.gb li a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;color:var(--ink);text-decoration:none;font:600 17px/1.2 var(--f-cond);border-bottom:1px solid #f0f0f0}
+.gb li:last-child a{border-bottom:0}
+.gb li a:after{content:"›";color:var(--o);font:700 22px var(--f-cond)}
+.gb li a:hover{background:var(--tint);color:var(--o-dk)}
+.co{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cc{border:1px solid var(--line);border-top:4px solid var(--o);border-radius:8px;padding:14px 16px;font:500 15px/1.5 var(--f-cond)}
+.cc .r{font:700 13px var(--f-cond);letter-spacing:2px;text-transform:uppercase;color:var(--o)}
+.cc h4{margin:2px 0 6px;font:800 22px var(--f-head);text-transform:uppercase}
+.cc a{text-decoration:none}
+@media(max-width:760px){.co{grid-template-columns:1fr}}
+.heja{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--k);color:#fff;border-radius:10px;padding:18px 20px;border-left:6px solid var(--o)}
+.heja h3{margin:0;font:800 24px var(--f-head);text-transform:uppercase}
+.heja p{margin:2px 0 0;font:500 16px var(--f-cond);color:#bbb}
+.heja .btn{margin-left:auto}
+</style>
+</head>
+<body>
+<header class="top" id="top"></header>
+<div class="tk" id="tk"></div>
+<div class="hdr"><div class="wrap"><h1>Parents &amp; Athletes</h1><p>Coaches · <b>Team Documents</b> · Sign-ups</p></div></div>
+
+<main class="wrap">
+<div class="sec">Team App</div>
+<div class="heja"><div><h3>Heja</h3><p>Team messages, schedule changes and updates go out on Heja.</p></div><a class="btn" id="heja" href="#" target="_blank" rel="noopener">Sign-Up Instructions</a></div>
+<div class="sec">Coaches</div>
+<div class="co" id="co"></div>
+<div class="sec">Documents &amp; Sign-Ups</div>
+<div class="grp" id="grp"></div>
+</main>
+<footer class="foot" id="foot"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/site.js"></script>
+<script>
+function groups(list,icons){return list.map(g=>'<div class="gb"><h3>'+(icons&&ICON[g.icon]||'')+esc(g.group)+'</h3><ul>'+g.items.map(([t,u])=>'<li><a href="'+esc(u)+'"'+ext(u)+'>'+esc(t)+'</a></li>').join('')+'</ul></div>').join('')}
+const hj=XC.QUICK.find(q=>/heja/i.test(q.title));if(hj)document.getElementById('heja').href=hj.url;
+document.getElementById('co').innerHTML=XC.COACHES.map(c=>'<div class="cc"><div class="r">'+esc(c.role)+'</div><h4>'+esc(c.name)+'</h4>'+
+  (c.cell?'Cell: <a href="tel:'+c.cell.replace(/\D/g,'')+'">'+esc(c.cell)+'</a><br>':'')+(c.school?'School: '+esc(c.school)+'<br>':'')+(c.email?'<a href="mailto:'+esc(c.email)+'">'+esc(c.email)+'</a>':'')+'</div>').join('');
+document.getElementById('grp').innerHTML=groups(XC.DOCS);
+</script>
+</body>
+</html>

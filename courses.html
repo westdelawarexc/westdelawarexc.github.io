@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courses · West Delaware Girls Cross Country</title>
+<meta name="description" content="Meet sites, directions from West Delaware High School, course maps and course records for West Delaware girls cross country.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,700;0,800;1,900&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.intro{font:500 17px var(--f-cond);color:#555;margin:22px 0 6px}
+.cl{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+.co{display:flex;border:2px solid var(--k);border-radius:10px;overflow:hidden;background:#fff;scroll-margin-top:90px}
+.co .n{background:var(--k);color:var(--o);font:italic 900 34px var(--f-head);min-width:62px;display:flex;align-items:center;justify-content:center}
+.co .b{flex:1;padding:12px 16px 14px}
+.co h3{margin:0;font:800 21px/1.1 var(--f-head);text-transform:uppercase}
+.co .ve{font:700 16px var(--f-cond);color:var(--o);margin-top:2px}
+.co .ad{font:500 15px var(--f-cond);color:#666}
+.co .nt{font:500 14px var(--f-cond);color:#999;font-style:italic}
+.co .rc{display:flex;align-items:baseline;gap:8px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font:600 15px var(--f-cond)}
+.co .rc small{font:700 12px var(--f-cond);letter-spacing:1.5px;text-transform:uppercase;color:#888}
+.co .rc b{font:italic 900 22px var(--f-head);color:var(--o)}
+.co.home{border-color:var(--o)}.co.home .n{background:var(--o);color:#fff}
+@media(max-width:760px){.cl{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top" id="top"></header>
+<div class="tk" id="tk"></div>
+<div class="hdr"><div class="wrap"><h1>Courses</h1><p><b>Directions</b> · Course maps · Course records</p></div></div>
+
+<main class="wrap">
+<p class="intro">All directions start from West Delaware High School. Tap <b>Directions</b> to open the route in your maps app.</p>
+<div class="cl" id="cl"></div>
+</main>
+<footer class="foot" id="foot"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/site.js"></script>
+<script>
+const C=XC.COURSES;
+document.getElementById('cl').innerHTML=Object.keys(C).map((k,i)=>{const c=C[k];
+  return '<div class="co'+(c.home?' home':'')+'" id="'+k+'"><div class="n">'+(i+1)+'</div><div class="b"><h3>'+esc(c.name)+'</h3>'+
+  '<div class="ve">'+esc(c.venue)+(c.home?' <span class="tag hm" style="vertical-align:2px">Home</span>':'')+'</div><div class="ad">'+esc(c.address)+'</div>'+(c.note?'<div class="nt">'+esc(c.note)+'</div>':'')+
+  '<div class="lk"><a href="'+dirUrl(c.address)+'" target="_blank" rel="noopener">Directions</a>'+(c.map?'<a href="'+esc(c.map)+'" target="_blank" rel="noopener">Course Map</a>':'')+'</div>'+
+  (c.record?'<div class="rc"><small>Course record</small><b>'+esc(c.record.time)+'</b>'+esc(c.record.name)+' · '+esc(c.record.year)+'</div>':'')+'</div></div>'}).join('');
+if(location.hash){const t=document.querySelector(location.hash);if(t)t.scrollIntoView()}
+</script>
+</body>
+</html>

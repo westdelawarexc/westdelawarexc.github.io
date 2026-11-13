@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Records · West Delaware Girls Cross Country</title>
+<meta name="description" content="West Delaware girls cross country 5K course records, all-time top times and class records.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,700;0,800;1,900&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.cd{border:2px solid var(--k);display:flex;flex-direction:column;background:#fff}
+.cd .c{background:var(--k);color:#fff;font:700 15px var(--f-cond);letter-spacing:1.5px;text-transform:uppercase;padding:6px 10px;border-bottom:4px solid var(--o)}
+.cd .v{font:italic 900 52px/1 var(--f-head);color:var(--o);padding:12px 12px 2px;font-variant-numeric:tabular-nums}
+.cd .nm{font:700 21px/1.15 var(--f-cond);padding:0 12px}
+.cd .ss{font:500 14px var(--f-cond);color:#666;letter-spacing:1px;padding:2px 12px 12px;text-transform:uppercase}
+@media(max-width:640px){.cards{grid-template-columns:1fr 1fr;gap:10px}.cd .v{font-size:38px}.cd .nm{font-size:17px}.cd .c{font-size:13px;letter-spacing:1px}}
+@media(max-width:380px){.cards{grid-template-columns:1fr}}
+.cd.top{border-color:var(--o)}.cd.top .c{background:var(--o);border-bottom-color:var(--k)}
+.tt{width:100%;border-collapse:collapse;font:500 17px var(--f-cond)}
+.tt th{background:var(--k);color:#fff;text-align:left;font:700 14px var(--f-cond);letter-spacing:1.5px;text-transform:uppercase;padding:7px 10px;border-bottom:3px solid var(--o)}
+.tt td{padding:7px 10px;border-bottom:1px solid #eee}
+.tt td:first-child{width:46px;color:#999;font-weight:700}
+.tt td.t{font:italic 900 19px var(--f-head);color:var(--o);width:90px}
+.tt tr:nth-child(even) td{background:#fafafa}
+.clg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.clg h3{margin:0 0 6px;font:800 19px var(--f-head);text-transform:uppercase}
+@media(max-width:700px){.clg{grid-template-columns:1fr}}
+.old{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+</style>
+</head>
+<body>
+<header class="top" id="top"></header>
+<div class="tk" id="tk"></div>
+<div class="hdr"><div class="wrap"><h1>Records</h1><p><b>5K</b> Records · since 2015</p></div></div>
+
+<main class="wrap">
+<div class="sec">Course Records <small>fastest WD time on each course</small></div>
+<div class="cards" id="cr"></div>
+<div class="sec">All-Time Top Times</div>
+<div id="tt"></div>
+<div class="sec">Class Records</div>
+<div id="cls"></div>
+<div class="sec">4K Era <small>before 2015</small></div>
+<p style="font:500 16px var(--f-cond);color:#555;margin:0">The team raced 4,000 meters until the 2015 season switched to 5,000 meters.</p>
+<div class="old lk" id="old"></div>
+</main>
+<footer class="foot" id="foot"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/site.js"></script>
+<script>
+const secs=t=>{const m=String(t).match(/(\d+):(\d+)/);return m?+m[1]*60+ +m[2]:9e9};
+const recs=Object.values(XC.COURSES).filter(c=>c.record);const best=Math.min(...recs.map(c=>secs(c.record.time)));
+document.getElementById('cr').innerHTML=recs.map(c=>'<div class="cd'+(secs(c.record.time)===best?' top':'')+'"><div class="c">'+esc(c.name)+'</div><div class="v">'+esc(c.record.time)+'</div><div class="nm">'+esc(c.record.name)+'</div><div class="ss">'+esc(c.record.year)+'</div></div>').join('');
+const table=rows=>'<table class="tt"><tr><th>#</th><th>Time</th><th>Runner</th><th>Year</th></tr>'+rows.slice().sort((a,b)=>secs(a.time)-secs(b.time)).map((r,i)=>'<tr><td>'+(i+1)+'</td><td class="t">'+esc(r.time)+'</td><td>'+esc(r.name)+'</td><td>'+esc(r.year)+'</td></tr>').join('')+'</table>';
+const empty=t=>'<div class="empty"><b>Coming soon</b>'+t+'</div>';
+document.getElementById('tt').innerHTML=XC.TOP_TIMES.length?table(XC.TOP_TIMES):empty('The top 5K times list is being moved over to the new site.');
+const CR=XC.CLASS_RECORDS,has=Object.values(CR).some(a=>a.length);
+document.getElementById('cls').innerHTML=has?'<div class="clg">'+Object.keys(CR).map(k=>'<div><h3>'+esc(k)+'</h3>'+(CR[k].length?table(CR[k]):'<div class="msg">None posted</div>')+'</div>').join('')+'</div>':empty('Top senior, junior, sophomore and freshman times are being moved over to the new site.');
+document.getElementById('old').innerHTML=XC.OLD_4K.map(([t,u])=>'<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t)+'</a>').join('');
+</script>
+</body>
+</html>
