@@ -157,7 +157,7 @@
 @media(max-width:760px){.nums{grid-template-columns:1fr 1fr}.num b{font-size:40px}}
 
 /* quick links */
-.ql{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ql{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .ql a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:96px;background:var(--k);color:#fff;text-decoration:none;border-radius:10px;padding:16px 56px 16px 18px;overflow:hidden;transition:transform .2s,box-shadow .2s}
 .ql a:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--o)}
 .ql a:after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-50%);font:700 38px var(--f-cond);color:var(--o);transition:transform .2s}

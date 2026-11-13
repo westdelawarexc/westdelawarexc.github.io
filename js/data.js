@@ -59,7 +59,6 @@ const XC = {
   QUICK: [
     {title:'Heja Team App', sub:'Sign-up instructions for athletes & parents', url:'https://docs.google.com/document/d/e/2PACX-1vR1W2D5Sfei_lA1QI0OIhsL4_-_hRerHfsJj1ZhHyyud1s66ExVGQml9jAwYSupsmFhU7ox5qqqX7cs/pub'},
     {title:'Team Meal Sign-Up', sub:'Pick a pre-meet pasta night', url:'https://docs.google.com/document/d/1f-7YKdo4F9D-S-aX49-j6ZNhgCOQStjM9ryR-HYsdWY/edit?usp=sharing'},
-    {title:'Sub Parent Pickup List', sub:'Who can pick up your runner after a meet', url:'https://docs.google.com/document/d/1vclDDFHQzDEaNuyuxf6HXbx_0czqcs4SYXZ2ymJqS4k/edit?usp=sharing'},
     {title:'Printable Schedule', sub:'Season meet schedule to print', url:'https://docs.google.com/document/d/1gHSHpo0kqOHYB9ZJaGNpAc_GC4vWCH2dX_mrnEFsvNQ/edit?usp=sharing'},
   ],
 
@@ -142,7 +141,6 @@ const XC = {
     {group:'Parents', items:[
       ['Unofficial Parents\' Handbook','https://docs.google.com/document/d/1JTCJA2MO_WqeLq9AMtTINXm7y7wN7NQN1A9DMJOE1Pw/edit?usp=sharing'],
       ['Team Meal Sign-Up','https://docs.google.com/document/d/1f-7YKdo4F9D-S-aX49-j6ZNhgCOQStjM9ryR-HYsdWY/edit?usp=sharing'],
-      ['Sub Parent Pickup List','https://docs.google.com/document/d/1vclDDFHQzDEaNuyuxf6HXbx_0czqcs4SYXZ2ymJqS4k/edit?usp=sharing'],
       ['Heja App Sign-Up Instructions','https://docs.google.com/document/d/e/2PACX-1vR1W2D5Sfei_lA1QI0OIhsL4_-_hRerHfsJj1ZhHyyud1s66ExVGQml9jAwYSupsmFhU7ox5qqqX7cs/pub'],
     ]},
     {group:'Team', items:[
