@@ -51,9 +51,8 @@ const XC = {
 
   /* ---------- COACHES ---------- */
   COACHES: [
-    {role:'Head Coach', name:'Ben Moser', school:'(563) 927-3515 ext. 147', cell:'(563) 608-6024', email:'benmoser@w-delaware.k12.ia.us'},
-    {role:'Assistant Coach', name:'Jason Guyer', school:'(563) 927-3515 ext. 354', cell:'(563) 608-6635', email:'jasonguyer@w-delaware.k12.ia.us'},
-    {role:'Volunteer Assistant Coach', name:'Jake Blumer'},
+    {role:'Head Coach', name:'Jason Guyer', school:'(563) 927-3515 ext. 354', cell:'(563) 608-6635', email:'jasonguyer@w-delaware.k12.ia.us'},
+    {role:'Assistant Coach', name:'Jake Blumer'},
   ],
 
   /* ---------- QUICK LINKS (home page buttons) ---------- */
@@ -212,5 +211,5 @@ const XC = {
     ['The Slight Edge','Jeff Olson'],
     ['The Energy Bus','Jon Gordon'],
   ],
-  CAMPS: 'See Coach Moser for details on running camps offered throughout the summer.',
+  CAMPS: 'See Coach Guyer for details on running camps offered throughout the summer.',
 };
