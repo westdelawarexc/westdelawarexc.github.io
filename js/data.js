@@ -75,7 +75,7 @@ const XC = {
                map:'https://5d1ac145-9e4b-4156-ab35-12fbafa7d330.filesusr.com/ugd/29c35b_05e242147cc949ceb8f29acb78b267f8.pdf',
                record:{time:'20:36', name:'Brynn Kartman', year:2023}},
     wd:       {name:'West Delaware Invitational', venue:'Hart Ridge Golf Course', town:'Manchester', address:'1647 195th St, Manchester, IA 52057', home:true,
-               map:'https://5d1ac145-9e4b-4156-ab35-12fbafa7d330.filesusr.com/ugd/29c35b_9ad6e587854f41f3be5c3d77b0757333.pdf',
+               map:'img/map-west-delaware-invite.jpg',
                record:{time:'19:50', name:'Norah Peyton', year:2025}},
     oelwein:  {name:'Oelwein Invitational', venue:'Hickory Grove Golf Course', town:'Oelwein', address:'1509 Outer Rd, Oelwein, IA 50662',
                map:'https://5d1ac145-9e4b-4156-ab35-12fbafa7d330.filesusr.com/ugd/29c35b_fb615c318a4a444da65134b04d56e755.pdf',
